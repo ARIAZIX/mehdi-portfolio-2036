@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mehdi Yaghoubian | Portfolio 2036</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}:root{--cyan:#00F5FF;--violet:#8B5CF6;--magenta:#FF00FF;--space:#000008}body{font-family:Inter,sans-serif;background:var(--space);color:#fff;overflow-x:hidden}#starfield{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1}.neon-text{text-shadow:0 0 10px var(--cyan),0 0 20px var(--cyan),0 0 30px var(--cyan)}.glass-card{background:rgba(255,255,255,.05);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:2rem;animation:borderGlow 3s ease-in-out infinite}@keyframes borderGlow{0%,100%{border-color:rgba(0,245,255,.3)}50%{border-color:rgba(139,92,246,.3)}}nav{position:fixed;top:0;width:100%;background:rgba(0,0,8,.8);backdrop-filter:blur(20px);padding:1rem 5%;z-index:1000;border-bottom:1px solid rgba(0,245,255,.2)}nav ul{display:flex;justify-content:center;gap:3rem;list-style:none}nav a{color:#fff;text-decoration:none;font-family:Orbitron,monospace;transition:all .3s}nav a:hover{color:var(--cyan);text-shadow:0 0 10px var(--cyan)}#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;padding:0 5%}#hero h1{font-family:Orbitron,monospace;font-size:4rem;letter-spacing:.3em;margin-bottom:1rem;animation:fadeInUp 1s ease-out}@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.subtitle{font-size:1.5rem;color:var(--violet);margin-bottom:2rem;min-height:2rem}.availability-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,255,127,.1);border:1px solid #00FF7F;padding:.5rem 1rem;border-radius:50px;margin:2rem 0}.pulse-dot{width:10px;height:10px;background:#00FF7F;border-radius:50%;animation:pulse 2s infinite}@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.2)}}.avatar-orb{position:relative;width:300px;height:300px;margin:2rem 0}.orb-core{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:200px;height:200px;background:linear-gradient(135deg,var(--cyan),var(--violet));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Orbitron,monospace;font-size:5rem;font-weight:900;box-shadow:0 0 60px var(--cyan)}.orbit-ring{position:absolute;top:0;left:0;width:100%;height:100%;border:2px solid rgba(0,245,255,.3);border-radius:50%;animation:rotate 10s linear infinite}.orbit-ring:nth-child(2){animation:rotate 15s linear infinite reverse;transform:rotateX(60deg)}.orbit-ring:nth-child(3){animation:rotate 20s linear infinite;transform:rotateY(60deg)}@keyframes rotate{from{transform:rotate(0)}to{transform:rotate(360deg)}}.cta-buttons{display:flex;gap:1rem;margin:2rem 0;flex-wrap:wrap;justify-content:center}.cta-btn{padding:1rem 2rem;font-family:Orbitron,monospace;font-size:1rem;border:2px solid var(--cyan);background:0 0;color:#fff;cursor:pointer;transition:all .3s;position:relative;overflow:hidden}.cta-btn:hover{background:var(--cyan);color:var(--space);box-shadow:0 0 20px var(--cyan)}.stats-row{display:flex;gap:3rem;margin:3rem 0;flex-wrap:wrap;justify-content:center}.stat-item{text-align:center}.stat-number{font-family:Orbitron,monospace;font-size:2.5rem;color:var(--cyan);font-weight:900}section{min-height:100vh;padding:100px 5%;display:flex;flex-direction:column;align-items:center;justify-content:center}section h2{font-family:Orbitron,monospace;font-size:3rem;margin-bottom:3rem;text-align:center}#about{max-width:900px}.bio-text{line-height:1.8;font-size:1.1rem}.bio-text p{margin-bottom:1rem}.highlight{color:var(--cyan);font-weight:600}.timeline{position:relative;max-width:1000px;width:100%}.timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--cyan),var(--violet))}.timeline-item{margin-bottom:3rem;position:relative}.timeline-item:nth-child(odd){padding-right:55%}.timeline-item:nth-child(even){padding-left:55%;text-align:right}.timeline-node{position:absolute;left:50%;transform:translateX(-50%);width:20px;height:20px;background:var(--cyan);border-radius:50%;box-shadow:0 0 20px var(--cyan)}.current-badge{background:#00FF7F;color:var(--space);padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:700;display:inline-block;animation:pulse 2s infinite}.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;width:100%;max-width:1200px}.skill-category h3{font-family:Orbitron,monospace;color:var(--cyan);margin-bottom:1.5rem}.skill-bar{margin-bottom:1rem}.skill-name{display:flex;justify-content:space-between;margin-bottom:.5rem}.skill-progress{height:10px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden;position:relative}.skill-fill{height:100%;background:linear-gradient(90deg,var(--cyan),var(--violet));border-radius:10px;box-shadow:0 0 10px var(--cyan);transition:width 1s ease-out;width:0}.skill-bar.animate .skill-fill{width:var(--skill-width)}.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;width:100%;max-width:1200px}.project-card{position:relative;height:350px;perspective:1000px;cursor:pointer}.project-card-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}.project-card:hover .project-card-inner{transform:rotateY(180deg)}.project-card-back,.project-card-front{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:20px;padding:2rem;display:flex;flex-direction:column;justify-content:center}.project-card-front{background:rgba(255,255,255,.05);backdrop-filter:blur(20px);border:1px solid rgba(0,245,255,.3)}.project-card-back{background:linear-gradient(135deg,rgba(0,245,255,.2),rgba(139,92,246,.2));backdrop-filter:blur(20px);border:1px solid rgba(139,92,246,.3);transform:rotateY(180deg)}.project-tag{display:inline-block;background:var(--cyan);color:var(--space);padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:700;margin-bottom:1rem}.tech-stack{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}.tech-pill{background:rgba(0,245,255,.2);border:1px solid var(--cyan);padding:.3rem .8rem;border-radius:20px;font-size:.8rem}.contact-container{display:grid;grid-template-columns:1fr 1fr;gap:3rem;width:100%;max-width:1000px}.contact-form{display:flex;flex-direction:column;gap:1rem}.form-group input,.form-group textarea{width:100%;padding:1rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.2);border-radius:10px;color:#fff;font-family:Inter,sans-serif;transition:all .3s}.form-group input:focus,.form-group textarea:focus{outline:0;border-color:var(--cyan);box-shadow:0 0 10px rgba(0,245,255,.3)}.submit-btn{padding:1rem 2rem;background:var(--cyan);color:var(--space);border:none;border-radius:10px;font-family:Orbitron,monospace;font-weight:700;cursor:pointer;transition:all .3s}.submit-btn:hover{box-shadow:0 0 20px var(--cyan);transform:translateY(-2px)}.contact-info{display:flex;flex-direction:column;gap:2rem}.contact-item{display:flex;align-items:center;gap:1rem}.contact-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--cyan),var(--violet));border-radius:50%;display:flex;align-items:center;justify-content:center}footer{text-align:center;padding:2rem;border-top:1px solid rgba(0,245,255,.2);font-family:Orbitron,monospace}.scroll-indicator{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);animation:bounce 2s infinite}@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-10px)}}@media (max-width:768px){#hero h1{font-size:2.5rem;letter-spacing:.1em}.timeline-item:nth-child(even),.timeline-item:nth-child(odd){padding:0 0 0 50px;text-align:left}.timeline::before{left:0}.timeline-node{left:0}.contact-container{grid-template-columns:1fr}nav ul{gap:1rem;font-size:.9rem}}
+    </style>
+</head>
+<body>
+    <canvas id="starfield"></canvas>
+    <nav>
+        <ul>
+            <li><a href="#hero">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#experience">EXPERIENCE</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+    <section id="hero">
+        <h1 class="neon-text">MEHDI YAGHOUBIAN</h1>
+        <div class="subtitle" id="typewriter"></div>
+        <div class="availability-badge"><div class="pulse-dot"></div><span>AVAILABLE FOR HIRE</span></div>
+        <div class="avatar-orb">
+            <div class="orbit-ring"></div>
+            <div class="orbit-ring"></div>
+            <div class="orbit-ring"></div>
+            <div class="orb-core">M</div>
+        </div>
+        <div class="cta-buttons">
+            <button class="cta-btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">VIEW MY WORK</button>
+            <button class="cta-btn" onclick="alert('Resume PDF coming soon!')">DOWNLOAD RESUME</button>
+            <button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">CONTACT ME</button>
+        </div>
+        <div class="stats-row">
+            <div class="stat-item"><div class="stat-number">5+</div><div>Years Experience</div></div>
+            <div class="stat-item"><div class="stat-number">20+</div><div>Team Members Led</div></div>
+            <div class="stat-item"><div class="stat-number">15+</div><div>Projects Built</div></div>
+            <div class="stat-item"><div class="stat-number">3</div><div>Promotions Earned</div></div>
+        </div>
+        <div class="scroll-indicator"><span style="font-size:2rem">↓</span></div>
+    </section>
+    <section id="about">
+        <div class="glass-card">
+            <h2 class="neon-text">ABOUT ME</h2>
+            <div class="bio-text">
+                <p>With a <span class="highlight">Computer Engineering</span> background and over <span class="highlight">5 years</span> in logistics and operations management, I bridge the gap between operational excellence and cutting-edge technology.</p>
+                <p>Currently leading a <span class="highlight">20+ person team</span> at D&V Electronics as Operations Team Leader, where I've designed and implemented <span class="highlight">workflow automation systems</span> that streamline processes and reduce errors across departments.</p>
+                <p>I build software using <span class="highlight">GitHub + AI tools</span>, specializing in practical automation solutions that solve real-world business challenges. My unique combination of hands-on operations experience and technical development skills allows me to create solutions that actually work in production environments.</p>
+                <p><span class="highlight">Bilingual</span> (English & Persian) • Based in Vaughan, Ontario, Canada</p>
+            </div>
+        </div>
+    </section>
+    <section id="experience">
+        <h2 class="neon-text">EXPERIENCE</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="glass-card">
+                    <h3>Operations Team Leader <span class="current-badge">CURRENT</span></h3>
+                    <p><strong>D&V Electronics</strong> | 2021 - Present</p>
+                    <ul style="margin-top:1rem;line-height:1.8">
+                        <li>Leading 20+ person team across warehouse, shipping, and core operations</li>
+                        <li>Designed Excel color-coded workflow automation system (10 users)</li>
+                        <li>Senior on-site decision-maker, trusted to run full operations independently</li>
+                        <li>Multi-department responsibility: Warehouse, Shipping, Core Department</li>
+                        <li>IT troubleshooting and systems support</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="glass-card">
+                    <h3>Team Leader & Office Administrator</h3>
+                    <p><strong>Dixie Electric Ltd.</strong> | 2019 - 2021</p>
+                    <ul style="margin-top:1rem;line-height:1.8">
+                        <li>Promoted 3 times within 3 years (Material Handler → Team Lead → Office Admin)</li>
+                        <li>Managed warehouse picking, core department, and shipping office</li>
+                        <li>Stepped into Office Admin role; 2 staff reported to my direction</li>
+                        <li>Excel workflow optimization reducing cross-department errors</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="glass-card">
+                    <h3>IT Manager & E-Commerce Specialist</h3>
+                    <p><strong>Setareh Farhang</strong></p>
+                    <ul style="margin-top:1rem;line-height:1.8">
+                        <li>Managed IT infrastructure and e-commerce operations</li>
+                        <li>Implemented digital solutions for business growth</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="glass-card">
+                    <h3>IT Manager Assistant</h3>
+                    <p><strong>Jahrom Power Plant</strong></p>
+                    <ul style="margin-top:1rem;line-height:1.8">
+                        <li>IT systems support at power generation facility</li>
+                        <li>Critical infrastructure maintenance and troubleshooting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="skills">
+        <h2 class="neon-text">SKILLS</h2>
+        <div class="skills-grid">
+            <div class="glass-card skill-category">
+                <h3>OPERATIONS & LEADERSHIP</h3>
+                <div class="skill-bar"><div class="skill-name"><span>Team Leadership</span><span>95%</span></div><div class="skill-progress"><div class="skill-fill" style="--skill-width:95%"></div></div></div>
+                <div class="skill-bar"><div class="skill-name"><span>Warehouse Management</span><span>90%</span></div><div class="skill-progress"><div class="skill-fill" style="--skill-width:90%"></div></div></div>
+                <div class="skill-bar"><div class="skill-name"><span>Logistics Coordination</span><span>90%</span></div><div class="skill-progress"><div class="skill-fill" style="--skill-width:90%"></div></div></div>
+                <div class="skill-bar"><div class="skill-name"><span>Process Optimization</span><span>85%</span></div><div class="skill-progress"><div class="skill-fill" style="--skill-width:85%"></div></div></div>
+            </div>
+            <div class="glass-card skill-category">
+                <h3>TECHNOLOGY & SOFTWARE</h3>
+                <div class="skill-bar"><div class="skill-name"><span>Excel Advanced/Automation</span><span>92%</span></div><div class="skill-progress"><div class="skill-fill" style="--skill-width:92%"></div></div></div>
+                <div class="skill-bar"><div class="skill-name"><span>Workflow Automation</span><span>90%</span></div><div class="skill-progress"><div class="skill-fill" style="--skill-width:90%"></div></div></div>
+                <div class="skill-bar"><div class="skill-name"><span>GitHub + AI Development</span><span>88%</span></div><div class="skill-progress"><div class="skill-fill" style="--skill-width:88%"></div></div></div>
+                <div class="skill-bar"><div class="skill-name"><span>IT Support</span><span>85%</span></div><div class="skill-progress"><div class="skill-fill" style="--skill-width:85%"></div></div></div>
+            </div>
+            <div class="glass-card skill-category">
+                <h3>SOFT SKILLS</h3>
+                <div class="skill-bar"><div class="skill-name"><span>Problem Solving</span><span>95%</span></div><div class="skill-progress"><div class="skill-fill" style="--skill-width:95%"></div></div></div>
+                <div class="skill-bar"><div class="skill-name"><span>Multi-dept Coordination</span><span>92%</span></div><div class="skill-progress"><div class="skill-fill" style="--skill-width:92%"></div></div></div>
+                <div class="skill-bar"><div class="skill-name"><span>Communication</span><span>90%</span></div><div class="skill-progress"><div class="skill-fill" style="--skill-width:90%"></div></div></div>
+                <div class="skill-bar"><div class="skill-name"><span>Decision Making</span><span>88%</span></div><div class="skill-progress"><div class="skill-fill" style="--skill-width:88%"></div></div></div>
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <h2 class="neon-text">PROJECTS</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-card-inner">
+                    <div class="project-card-front">
+                        <span class="project-tag">OPERATIONS TECH</span>
+                        <h3>Excel Workflow Automation System</h3>
+                        <p>Color-coded order tracking system used by 10 staff members, automating status updates and reducing human error across departments.</p>
+                    </div>
+                    <div class="project-card-back">
+                        <h3>Tech Stack</h3>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Excel</span>
+                            <span class="tech-pill">VBA</span>
+                            <span class="tech-pill">Formulas</span>
+                        </div>
+                        <p style="margin-top:2rem">Used in production at D&V Electronics since 2021, handling thousands of orders monthly.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-inner">
+                    <div class="project-card-front">
+                        <span class="project-tag">WEB DEVELOPMENT</span>
+                        <h3>AI-Powered Portfolio Website</h3>
+                        <p>World-class futuristic portfolio built with modern web technologies, featuring 3D animations and space-age design.</p>
+                    </div>
+                    <div class="project-card-back">
+                        <h3>Tech Stack</h3>
+                        <div class="tech-stack">
+                            <span class="tech-pill">HTML5</span>
+                            <span class="tech-pill">CSS3</span>
+                            <span class="tech-pill">JavaScript</span>
+                            <span class="tech-pill">Canvas API</span>
+                        </div>
+                        <p style="margin-top:2rem">Deployed on Vercel with GitHub version control.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-inner">
+                    <div class="project-card-front">
+                        <span class="project-tag">AI & DATA</span>
+                        <h3>Football Analytics Platform</h3>
+                        <p>Sports prediction model using statistical analysis and AI for match outcome forecasting.</p>
+                    </div>
+                    <div class="project-card-back">
+                        <h3>Tech Stack</h3>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">Data Analysis</span>
+                            <span class="tech-pill">AI/ML</span>
+                        </div>
+                        <p style="margin-top:2rem">Analyzes historical data to predict game outcomes with machine learning.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-inner">
+                    <div class="project-card-front">
+                        <span class="project-tag">OPERATIONS TECH</span>
+                        <h3>Logistics Optimization Dashboard</h3>
+                        <p>Digital dashboard concept for real-time warehouse tracking and KPI monitoring.</p>
+                    </div>
+                    <div class="project-card-back">
+                        <h3>Tech Stack</h3>
+                        <div class="tech-stack">
+                            <span class="tech-pill">JavaScript</span>
+                            <span class="tech-pill">Chart.js</span>
+                            <span class="tech-pill">React</span>
+                        </div>
+                        <p style="margin-top:2rem">Real-time data visualization for warehouse operations management.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2 class="neon-text">GET IN TOUCH</h2>
+        <div class="contact-container">
+            <form class="contact-form" onsubmit="event.preventDefault();alert('Message sent! (Demo)')">
+                <div class="form-group"><input type="text" placeholder="Your Name" required></div>
+                <div class="form-group"><input type="email" placeholder="Your Email" required></div>
+                <div class="form-group"><textarea rows="6" placeholder="Your Message" required></textarea></div>
+                <button type="submit" class="submit-btn">SEND MESSAGE</button>
+            </form>
+            <div class="contact-info">
+                <div class="glass-card"><div class="contact-item"><div class="contact-icon">📧</div><div><p><strong>Email</strong></p><p>hello@mehdi.dev</p></div></div></div>
+                <div class="glass-card"><div class="contact-item"><div class="contact-icon">📍</div><div><p><strong>Location</strong></p><p>Vaughan, Ontario, Canada</p></div></div></div>
+                <div class="glass-card"><div class="contact-item"><div class="contact-icon">💼</div><div><p><strong>Status</strong></p><p>Available for opportunities</p></div></div></div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>Built in 2026 | Designed for 2036</p>
+        <p style="margin-top:.5rem;opacity:.7">© 2026 Mehdi Yaghoubian. All rights reserved.</p>
+    </footer>
+    <script>
+        const canvas=document.getElementById('starfield');const ctx=canvas.getContext('2d');canvas.width=window.innerWidth;canvas.height=window.innerHeight;const stars=[];for(let i=0;i<200;i++){stars.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,radius:Math.random()*1.5,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2})}function drawStars(){ctx.fillStyle='rgba(0,0,8,0.1)';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.fillStyle='white';stars.forEach(star=>{ctx.beginPath();ctx.arc(star.x,star.y,star.radius,0,Math.PI*2);ctx.fill();star.x+=star.vx;star.y+=star.vy;if(star.x<0||star.x>canvas.width)star.vx=-star.vx;if(star.y<0||star.y>canvas.height)star.vy=-star.vy});requestAnimationFrame(drawStars)}drawStars();window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight});const phrases=['Operations Excellence','Software Development','AI Integration','Tech Entrepreneurship','Team Leadership'];let phraseIndex=0;let charIndex=0;let isDeleting=false;const typewriter=document.getElementById('typewriter');function type(){const currentPhrase=phrases[phraseIndex];if(isDeleting){typewriter.textContent=currentPhrase.substring(0,charIndex-1);charIndex--}else{typewriter.textContent=currentPhrase.substring(0,charIndex+1);charIndex++}let typeSpeed=100;if(isDeleting){typeSpeed/=2}if(!isDeleting&&charIndex===currentPhrase.length){typeSpeed=2000;isDeleting=true}else if(isDeleting&&charIndex===0){isDeleting=false;phraseIndex=(phraseIndex+1)%phrases.length;typeSpeed=500}setTimeout(type,typeSpeed)}type();const skillBars=document.querySelectorAll('.skill-bar');const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('animate')}})},{threshold:.5});skillBars.forEach(bar=>observer.observe(bar));document.querySelectorAll('nav a').forEach(anchor=>{anchor.addEventListener('click',function(e){e.preventDefault();const target=document.querySelector(this.getAttribute('href'));target.scrollIntoView({behavior:'smooth'})})})
+    </script>
+</body>
+</html>
