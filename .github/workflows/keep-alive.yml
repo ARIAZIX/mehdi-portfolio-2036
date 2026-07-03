@@ -2,17 +2,17 @@ name: Keep Supabase Alive
 
 on:
   schedule:
-    - cron: '0 9 * * 1'  # Every Monday at 9 AM UTC
-  workflow_dispatch:       # Allow manual runs
+      - cron: '0 9 * * *'  # Every day at 9 AM UTC
+        workflow_dispatch:      # Allow manual runs
 
-jobs:
-  ping:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Ping Supabase Project
-        run: |
-          curl -s -o /dev/null -w "%{http_code}" \
-            "${{ secrets.SUPABASE_URL }}/rest/v1/" \
-            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
-            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}"
-          echo "Pinged Supabase successfully!"
+        jobs:
+          ping:
+              runs-on: ubuntu-latest
+                  steps:
+                        - name: Ping Supabase Project
+                                run: |
+                                          curl -s -o /dev/null -w "%{http_code}" \
+                                                      "https://kijqptzqrsahkdhmfcjk.supabase.co/rest/v1/" \
+                                                                  -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtpanFwdHpxcnNhaGtkaG1mY2prIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk2NzMyMjQsImV4cCI6MjA5NTI0OTIyNH0.a00oWfHVpO8rKIz7meQzjzlv2sUGeZ0BrwsE6oMkSgA" \
+                                                                              -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtpanFwdHpxcnNhaGtkaG1mY2prIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk2NzMyMjQsImV4cCI6MjA5NTI0OTIyNH0.a00oWfHVpO8rKIz7meQzjzlv2sUGeZ0BrwsE6oMkSgA"
+                                                                                        echo "Pinged Supabase successfully!"
